@@ -1,0 +1,2 @@
+# royalstake
+Gambling Website Template
