@@ -1,9 +1,14 @@
+'use client'
+
+import HeroSection from "./components/sections/Hero";
 import Image from "next/image"
+import Dropdown from "./components/Dropdown";
 import InfiniteLogoSlider from './components/InfiniteLogoSlider';
 import EmblaCarousel from "./components/EmblaCarousel";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function HomePage() {
-  
+
    // paymentImages list
    const paymentImages = [
     '/images/logos/mastercard.svg',
@@ -30,67 +35,49 @@ export default function HomePage() {
         {/* Navbar Wrapper */}
         <div className="flex justify-center bg-slate-900 min-h-16 w-full">
           {/* Navbar Container */}
-          <div className="container max-w-screen-xl flex flex-col sm:flex-row items-center sm:justify-between px-4">
-            {/* Logo Image */}
-            <Image
-              src="/images/logos/logo-extended.png"
-              width={160}
-              height={0}
-              alt="Logo Extended"
-              className="py-4"
-            />
+          <div className="container max-w-screen-xl flex flex-col lg:flex-row items-center sm:justify-between px-0 lg:px-4 divide-y divide-gray-300 lg:divide-y-0">
+            <div className="flex lg:flex-[4] flex-col lg:flex-row items-center w-full lg:gap-8 divide-y divide-gray-300 lg:divide-y-0">
+              {/* Logo Image */}
+              <Image
+                src="/images/logos/logo-extended.png"
+                width={160}
+                height={0}
+                alt="Logo Extended"
+                className="py-4"
+              />
+              <div className="flex justify-center py-2 lg:py-0 lg:justify-start gap-4 w-full">
+                <Dropdown
+                  iconBeforeTitle="fa-gamepad"
+                  title="Games"
+                  items={[
+                    { icon: 'fa-circle-xmark', label: 'Roulette', href: '/roulette' },
+                    { icon: 'fa-chart-line', label: 'Crash', href: '/crash' },
+                    { icon: 'fa-ring', label: 'Coinflip', href: '/coinflip' },
+                  ]}
+                  alignment="left"
+                />
+                <div className="flex justify-center items-center bg-transparent w-fit py-2 px-4 rounded-md text-gray-300 focus:outline-none hover:text-yellow-500 transition duration-300 ease-in-out">
+                  <i className="mr-1 fas fa-diamond" />
+                  <a href="/casino">Casino</a>
+                </div>
+                <div className="flex justify-center items-center bg-transparent w-fit py-2 px-4 rounded-md text-gray-300 focus:outline-none hover:text-yellow-500 transition duration-300 ease-in-out">
+                  <i className="mr-1 fas fa-football" />
+                  <a href="/match-betting">Match Betting</a>
+                </div>
+              </div>
+            </div>
             {/* Login & Register Buttons */}
-            <div className="flex items-center gap-4 py-4">
-              <a href="#" className="flex justify-center items-center bg-transparent w-fit py-2 px-4 rounded-md text-gray-300 hover:text-white transition duration-300 ease-in-out">Log In</a>
+            <div className="flex lg:flex-[1] justify-center lg:justify-end items-center gap-4 py-4 w-full">
+              <a href="#" className="flex justify-center items-center bg-transparent w-fit py-2 px-4 rounded-md text-gray-300 hover:text-yellow-500 transition duration-300 ease-in-out">Log In</a>
               <a href="#" className="flex justify-center items-center bg-yellow-500 w-fit py-2 px-4 rounded-md text-white shadow-md hover:bg-amber-500 transition duration-300 ease-in-out">Register</a>
             </div>
           </div>
         </div>
         {/* Content Wrapper */}
         <div className="flex flex-col items-center gap-16 w-full">
-          {/* Hero Section */}
-          <div className="container max-w-screen-xl flex flex-col-reverse md:flex-row items-center md:justify-between pt-16 px-4">
-            {/* Hero Text and Button Wrapper */}
-            <div className="flex flex-col justify-center gap-4">
-              {/* Single-line version for small screens */}
-              <h1 className="text-center text-white font-extrabold text-4xl leading-[3rem] md:hidden">
-                Bet smarter. Win bigger. Only at RoyalStake!
-              </h1>
-              {/* Multi-line version for md+ screens */}
-              <h1 className="hidden md:block text-white font-extrabold text-5xl leading-[4rem]">
-                Bet smarter.<br />
-                Win bigger.<br />
-                Only at RoyalStake!
-              </h1>
-              {/* CTA Button */}
-              <a href="#" className="flex justify-center items-center bg-yellow-500 h-10 md:w-fit w-full px-4 rounded-md text-white shadow-md hover:bg-amber-500 transition duration-300 ease-in-out">Bet Now</a>
-            </div>
-            {/* Hero Images Wrapper */}
-            <div className="flex gap-4">
-              {/* Hero Image 1 Gradient Effect */}
-              <div className="relative p-1 rounded-2xl before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-yellow-500 before:via-yellow-700/40 before:to-yellow-300 before:p-1 before:z-[-1]">
-                {/* Hero Image 1 */}
-                <Image
-                  src="/images/hero/hero-image-1.jpg"
-                  width={320}
-                  height={0}
-                  alt="Hero Image 1"
-                  className="rounded-xl"
-                />
-              </div>
-              {/* Hero Image 2 Gradient Effect */}
-              <div className="relative p-1 rounded-2xl before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-yellow-500 before:via-yellow-700/40 before:to-yellow-300 before:p-1 before:z-[-1]">
-                {/* Hero Image 2 */}
-                <Image
-                  src="/images/hero/hero-image-2.jpg"
-                  width={320}
-                  height={0}
-                  alt="Hero Image 2"
-                  className="rounded-xl"
-                />
-              </div>
-            </div>
-          </div>
+          
+          <HeroSection />
+
           {/* Logo Slider Wrapper */}
           <div className="flex justify-center bg-slate-900 w-full">
             {/* Logo Slider Container */}
@@ -268,7 +255,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="flex justify-center bg-slate-900 px-4 w-full">
-            <div className="container max-w-screen-xl flex gap-16 py-8">
+            <div className="container max-w-screen-xl flex flex-col md:flex-row gap-16 py-8">
               <div className="flex flex-1 flex-col justify-start">
                 <Image
                   src="/images/logos/logo-extended.png"
@@ -286,7 +273,7 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-[2] flex-row justify-between gap-8">
+              <div className="flex flex-[2] flex-col md:flex-row flex-wrap justify-between gap-8">
                   <div className="flex flex-col">
                     <h3 className="text-yellow-500 text-xl pb-2">Casino</h3>
                     <a href="#" className="text-white hover:text-gray-300 transition duration-300 ease-in-out">Roulette</a>
