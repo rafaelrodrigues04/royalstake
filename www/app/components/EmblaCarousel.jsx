@@ -4,16 +4,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const images = [
-  '/images/carousel/cs2-pgl-cluj-napoca.jpg',
-  '/images/carousel/league-of-legends-tournaments.jpg',
-  '/images/carousel/dota-2-dreamleague.jpg',
-  '/images/carousel/valorant-masters-bangkok.jpg',
-  '/images/carousel/uefa-champions-league.jpg',
-  '/images/carousel/ufc-fight-night.jpg',
-];
-
-const EmblaCarousel = () => {
+const EmblaCarousel = ({ images = [] }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);

@@ -1,126 +1,26 @@
 'use client'
 
+import Navbar from "./components/sections/Navbar";
 import HeroSection from "./components/sections/Hero";
+import LogoSliderSection from "./components/sections/LogoSlider";
+import NewsSliderSection from "./components/sections/NewsSlider";
+import PaymentMethodsSection from "./components/sections/PaymentMethods";
 import Image from "next/image"
-import Dropdown from "./components/Dropdown";
-import InfiniteLogoSlider from './components/InfiniteLogoSlider';
-import EmblaCarousel from "./components/EmblaCarousel";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function HomePage() {
-
-   // paymentImages list
-   const paymentImages = [
-    '/images/logos/mastercard.svg',
-    '/images/logos/visa.svg',
-    '/images/logos/amex.svg',
-    '/images/logos/paypal.svg',
-    '/images/logos/skrill.svg',
-    '/images/logos/paysafecard.svg',
-    '/images/logos/klarna.svg',
-    '/images/logos/webmoney.svg',
-    '/images/logos/blik.svg',
-    '/images/logos/boleto.svg',
-    '/images/logos/qiwi.svg',
-    '/images/logos/trustly.svg',
-    '/images/logos/bitcoin.svg',
-    '/images/logos/ethereum.svg',
-    '/images/logos/dogecoin.svg',
-  ];
 
   return (
     <div>
       {/* Main Wrapper */}
       <div className="flex flex-col items-center w-full">
-        {/* Navbar Wrapper */}
-        <div className="flex justify-center bg-slate-900 min-h-16 w-full">
-          {/* Navbar Container */}
-          <div className="container max-w-screen-xl flex flex-col lg:flex-row items-center sm:justify-between px-0 lg:px-4 divide-y divide-gray-300 lg:divide-y-0">
-            <div className="flex lg:flex-[4] flex-col lg:flex-row items-center w-full lg:gap-8 divide-y divide-gray-300 lg:divide-y-0">
-              {/* Logo Image */}
-              <Image
-                src="/images/logos/logo-extended.png"
-                width={160}
-                height={0}
-                alt="Logo Extended"
-                className="py-4"
-              />
-              <div className="flex justify-center py-2 lg:py-0 lg:justify-start gap-4 w-full">
-                <Dropdown
-                  iconBeforeTitle="fa-gamepad"
-                  title="Games"
-                  items={[
-                    { icon: 'fa-circle-xmark', label: 'Roulette', href: '/roulette' },
-                    { icon: 'fa-chart-line', label: 'Crash', href: '/crash' },
-                    { icon: 'fa-ring', label: 'Coinflip', href: '/coinflip' },
-                  ]}
-                  alignment="left"
-                />
-                <div className="flex justify-center items-center bg-transparent w-fit py-2 px-4 rounded-md text-gray-300 focus:outline-none hover:text-yellow-500 transition duration-300 ease-in-out">
-                  <i className="mr-1 fas fa-diamond" />
-                  <a href="/casino">Casino</a>
-                </div>
-                <div className="flex justify-center items-center bg-transparent w-fit py-2 px-4 rounded-md text-gray-300 focus:outline-none hover:text-yellow-500 transition duration-300 ease-in-out">
-                  <i className="mr-1 fas fa-football" />
-                  <a href="/match-betting">Match Betting</a>
-                </div>
-              </div>
-            </div>
-            {/* Login & Register Buttons */}
-            <div className="flex lg:flex-[1] justify-center lg:justify-end items-center gap-4 py-4 w-full">
-              <a href="#" className="flex justify-center items-center bg-transparent w-fit py-2 px-4 rounded-md text-gray-300 hover:text-yellow-500 transition duration-300 ease-in-out">Log In</a>
-              <a href="#" className="flex justify-center items-center bg-yellow-500 w-fit py-2 px-4 rounded-md text-white shadow-md hover:bg-amber-500 transition duration-300 ease-in-out">Register</a>
-            </div>
-          </div>
-        </div>
+        <Navbar />
         {/* Content Wrapper */}
         <div className="flex flex-col items-center gap-16 w-full">
-          
           <HeroSection />
-
-          {/* Logo Slider Wrapper */}
-          <div className="flex justify-center bg-slate-900 w-full">
-            {/* Logo Slider Container */}
-            <div className="container flex items-center max-w-screen-xl px-4 py-8">
-              {/* Logo Slider */}
-              <InfiniteLogoSlider />
-            </div>
-          </div>
-          {/* News Slider Wrapper */}
-          <div className="flex justify-center w-full">
-            {/* News Slider Container */}
-            <div className="container flex items-center max-w-screen-xl px-4">
-              {/* News Slider */}
-              <EmblaCarousel />
-            </div>
-          </div>
-          {/* Payment Gateways Wrapper */}
-          <div className="flex justify-center w-full px-4">
-            {/* Payment Gateways Container */}
-            <div className="container max-w-screen-xl flex flex-col bg-slate-900 p-6 rounded-xl md:flex-row items-center md:items-start md:justify-between gap-16">
-              {/* Left side - Image grid */}
-              <div className="grid grid-cols-5 gap-4 flex-shrink-0">
-                {paymentImages.map((src, index) => (
-                  <img
-                    key={index}
-                    src={src}
-                    alt={src}
-                    className="h-16 w-16 object-contain transition-transform duration-300 hover:translate-y-[-5px]"
-                  />
-                ))}
-              </div>
-
-              {/* Right side - Text content */}
-              <div className="flex flex-col w-full gap-4">
-                <h2 className="text-yellow-500 font-bold text-4xl xsm:text-5xl">Multiple Payment Methods</h2>
-                <p className="text-white text-base">
-                  Enjoy seamless transactions with a variety of payment options. From credit cards to cryptocurrencies, we support all major payment methods worldwide, ensuring a secure and convenient experience.
-                </p>
-                {/* CTA Button */}
-                <a href="#" className="flex justify-center items-center bg-yellow-500 h-10 md:w-fit w-full px-4 rounded-md text-white shadow-md hover:bg-amber-500 transition duration-300 ease-in-out">Deposit Now</a>
-              </div>
-            </div>
-          </div>
+          <LogoSliderSection />
+          <NewsSliderSection />
+          <PaymentMethodsSection />
           {/* Partners Wrapper */}
           <div className="flex justify-center w-full px-4">
             {/* Partners Container */}
@@ -167,9 +67,12 @@ export default function HomePage() {
                   </h2>
                   {/* Images */}
                   <div className="flex justify-center lg:justify-start mt-2 lg:mt-4">
-                    <img 
+                    <Image
                       src="/images/logos/vitality.png" 
-                      height="32" 
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: 'auto', height: '32' }}
                       alt="Vitality Team Logo" 
                     />
                   </div>
