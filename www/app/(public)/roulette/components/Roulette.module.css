@@ -1,0 +1,87 @@
+.rouletteWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 115px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%, 0%);
+  position: absolute;
+  z-index: 2;
+}
+
+.selector {
+  width: 4px;
+  background: #ffffff;
+  border-radius: 5rem;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%, 0%);
+  position: absolute;
+  z-index: 2;
+}
+
+.wheel {
+  display: flex;
+  transition: transform 6s cubic-bezier(0, 0.5, 0.5, 1);
+}
+
+.wheel.spinning {
+  transition-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  transition-duration: 6s;
+}
+
+.wheel.resetting {
+  transition-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  transition-duration: 0.5s;
+}
+
+.row {
+  display: flex;
+}
+
+.card {
+  height: 100px;
+  width: 100px;
+  margin: 1px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}  
+
+.t {
+  background-color: #fcc800;
+  background-image: url('/images/roulette/t.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ct {
+  background-color: #2e3c55;
+  background-image: url('/images/roulette/ct.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.crown {
+  background-color: #0f172b;
+  background-image: url('/images/roulette/crown.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 3px solid #fcc800;
+}

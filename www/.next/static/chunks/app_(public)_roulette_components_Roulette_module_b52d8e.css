@@ -1,0 +1,90 @@
+/* [project]/app/(public)/roulette/components/Roulette.module.css [app-client] (css) */
+.Roulette-module__-G9Ria__rouletteWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 115px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.Roulette-module__-G9Ria__timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%);
+  position: absolute;
+  z-index: 2;
+}
+
+.Roulette-module__-G9Ria__selector {
+  width: 4px;
+  background: #fff;
+  border-radius: 5rem;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%);
+  position: absolute;
+  z-index: 2;
+}
+
+.Roulette-module__-G9Ria__wheel {
+  display: flex;
+  transition: transform 6s cubic-bezier(0, .5, .5, 1);
+}
+
+.Roulette-module__-G9Ria__wheel.Roulette-module__-G9Ria__spinning {
+  transition-timing-function: cubic-bezier(0, .5, .5, 1);
+  transition-duration: 6s;
+}
+
+.Roulette-module__-G9Ria__wheel.Roulette-module__-G9Ria__resetting {
+  transition-timing-function: cubic-bezier(0, .5, .5, 1);
+  transition-duration: .5s;
+}
+
+.Roulette-module__-G9Ria__row {
+  display: flex;
+}
+
+.Roulette-module__-G9Ria__card {
+  height: 100px;
+  width: 100px;
+  margin: 1px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Roulette-module__-G9Ria__t {
+  background-color: #fcc800;
+  background-image: url("/images/roulette/t.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Roulette-module__-G9Ria__ct {
+  background-color: #2e3c55;
+  background-image: url("/images/roulette/ct.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Roulette-module__-G9Ria__crown {
+  background-color: #0f172b;
+  background-image: url("/images/roulette/crown.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 3px solid #fcc800;
+}
+
+/*# sourceMappingURL=app_%28public%29_roulette_components_Roulette_module_b52d8e.css.map*/

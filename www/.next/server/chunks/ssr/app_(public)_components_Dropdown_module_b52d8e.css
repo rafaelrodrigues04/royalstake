@@ -1,0 +1,25 @@
+/* [project]/app/(public)/components/Dropdown.module.css [app-client] (css) */
+.Dropdown-module__7rIIfa__dropdownContent {
+  display: none;
+  transform: translateY(10px);
+  transition: opacity .3s, transform .3s;
+}
+
+.Dropdown-module__7rIIfa__dropdownContent.Dropdown-module__7rIIfa__show {
+  display: block;
+  transform: translateY(0);
+}
+
+@keyframes Dropdown-module__7rIIfa__fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*# sourceMappingURL=app_%28public%29_components_Dropdown_module_b52d8e.css.map*/

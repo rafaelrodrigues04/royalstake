@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/app/(public)/components/Dropdown.module.css"],"sourcesContent":["\r\n.dropdownContent {\r\n  display: none;\r\n  transform: translateY(10px);\r\n  transition: opacity 0.3s ease, transform 0.3s ease;\r\n}\r\n  \r\n.dropdownContent.show {\r\n  display: block;\r\n  transform: translateY(0);\r\n}\r\n\r\n@keyframes fadeUp {\r\n    0% {\r\n      opacity: 0;\r\n      transform: translateY(10px);\r\n    }\r\n    100% {\r\n      opacity: 1;\r\n      transform: translateY(0);\r\n    }\r\n}"],"names":[],"mappings":"AACA;;;;;;AAMA;;;;;AAKA"}},
+    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
