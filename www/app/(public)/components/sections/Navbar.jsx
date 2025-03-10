@@ -50,7 +50,7 @@ const NavbarSection = () => {
                     {user ? (
                             <div className="flex md:flex-row flex-col justify-center items-center gap-2 text-yellow-500">
                                 <div className="flex items-center gap-2 bg-slate-950 rounded-md px-4 py-2 md:w-auto w-full">
-                                    <span className="text-yellow-500">&euro;123.45</span>
+                                    <span className="text-yellow-500">&euro;{user.balance}</span>
                                 </div>
                                 <div className="flex justify-center items-center gap-2">
                                     <div className="flex items-center gap-2 bg-slate-950 rounded-md px-4 py-2 md:w-auto w-full">

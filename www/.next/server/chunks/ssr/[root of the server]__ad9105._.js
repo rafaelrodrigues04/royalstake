@@ -414,11 +414,8 @@ const NavbarSection = ()=>{
                                     className: "flex items-center gap-2 bg-slate-950 rounded-md px-4 py-2 md:w-auto w-full",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-yellow-500",
-                                        children: [
-                                            "€",
-                                            user.balance
-                                        ]
-                                    }, void 0, true, {
+                                        children: "€123.45"
+                                    }, void 0, false, {
                                         fileName: "[project]/app/(public)/components/sections/Navbar.jsx",
                                         lineNumber: 53,
                                         columnNumber: 37
@@ -628,306 +625,38 @@ const mod = __turbopack_external_require__("tls", () => require("tls"));
 
 module.exports = mod;
 }}),
-"[project]/app/(public)/roulette/components/Roulette.module.css [app-client] (css module)": ((__turbopack_context__) => {
-
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, t: __turbopack_require_real__ } = __turbopack_context__;
-{
-__turbopack_export_value__({
-  "card": "Roulette-module__-G9Ria__card",
-  "crown": "Roulette-module__-G9Ria__crown",
-  "ct": "Roulette-module__-G9Ria__ct",
-  "resetting": "Roulette-module__-G9Ria__resetting",
-  "rouletteWrapper": "Roulette-module__-G9Ria__rouletteWrapper",
-  "row": "Roulette-module__-G9Ria__row",
-  "selector": "Roulette-module__-G9Ria__selector",
-  "spinning": "Roulette-module__-G9Ria__spinning",
-  "t": "Roulette-module__-G9Ria__t",
-  "timer": "Roulette-module__-G9Ria__timer",
-  "wheel": "Roulette-module__-G9Ria__wheel",
-});
-}}),
 "[project]/app/(public)/roulette/components/Roulette.jsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, z: __turbopack_require_stub__ } = __turbopack_context__;
 {
 __turbopack_esm__({
-    "default": (()=>__TURBOPACK__default__export__)
+    "default": (()=>Roulette)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_import__("[project]/node_modules/socket.io-client/build/esm-debug/index.js [app-ssr] (ecmascript) <module evaluation>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$public$292f$roulette$2f$components$2f$Roulette$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_import__("[project]/app/(public)/roulette/components/Roulette.module.css [app-client] (css module)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_import__("[project]/node_modules/socket.io-client/build/esm-debug/index.js [app-ssr] (ecmascript) <locals>");
 ;
 ;
 ;
-;
-const Roulette = ()=>{
-    const [spinning, setSpinning] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [wheelPosition, setWheelPosition] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
-    const [timer, setTimer] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(15.0);
-    const [isTimerActive, setIsTimerActive] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [spinDuration, setSpinDuration] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
-    const animationRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const socketRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const wheelData = [
-        {
-            color: 't',
-            value: 1
-        },
-        {
-            color: 'ct',
-            value: 14
-        },
-        {
-            color: 't',
-            value: 2
-        },
-        {
-            color: 'ct',
-            value: 13
-        },
-        {
-            color: 't',
-            value: 3
-        },
-        {
-            color: 'ct',
-            value: 12
-        },
-        {
-            color: 't',
-            value: 4
-        },
-        {
-            color: 'crown',
-            value: 0
-        },
-        {
-            color: 'ct',
-            value: 11
-        },
-        {
-            color: 't',
-            value: 5
-        },
-        {
-            color: 'ct',
-            value: 10
-        },
-        {
-            color: 't',
-            value: 6
-        },
-        {
-            color: 'ct',
-            value: 9
-        },
-        {
-            color: 't',
-            value: 7
-        },
-        {
-            color: 'ct',
-            value: 8
-        }
-    ];
-    const initWheel = ()=>{
-        return Array.from({
-            length: 29
-        }, (_, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$public$292f$roulette$2f$components$2f$Roulette$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].row,
-                children: wheelData.map((card, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `${__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$public$292f$roulette$2f$components$2f$Roulette$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].card} ${__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$public$292f$roulette$2f$components$2f$Roulette$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"][card.color]} ${isTimerActive ? 'opacity-50' : ''}`,
-                        children: card.value
-                    }, index, false, {
-                        fileName: "[project]/app/(public)/roulette/components/Roulette.jsx",
-                        lineNumber: 30,
-                        columnNumber: 11
-                    }, this))
-            }, i, false, {
-                fileName: "[project]/app/(public)/roulette/components/Roulette.jsx",
-                lineNumber: 28,
-                columnNumber: 7
-            }, this));
-    };
-    const spinWheel = (roll, duration = 6)=>{
-        const order = [
-            0,
-            11,
-            5,
-            10,
-            6,
-            9,
-            7,
-            8,
-            1,
-            14,
-            2,
-            13,
-            3,
-            12,
-            4
-        ];
-        const position = order.indexOf(roll);
-        const rows = 12;
-        const card = 100 + 1 * 2;
-        let landingPosition = rows * 15 * card + position * card;
-        const randomize = Math.floor(Math.random() * 75) - 37;
-        landingPosition += randomize;
-        setWheelPosition(landingPosition);
-        setSpinning(true);
-        setIsTimerActive(false);
-        setSpinDuration(duration);
-        setTimeout(()=>{
-            setSpinning(false);
-            setWheelPosition(landingPosition);
-            // Increase the delay to 1000ms for smoother reset and sync countdown
-            setTimeout(()=>{
-                setWheelPosition(0);
-                // Reset roulette to position 0
-                setSpinDuration(0.5);
-                // Start timer after reset animation
-                startTimer();
-            }, 1000);
-        }, duration * 1000);
-    };
-    const startTimer = ()=>{
-        setIsTimerActive(true);
-        setTimer(15.0);
-    };
+function Roulette() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (!socketRef.current) {
-            socketRef.current = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"])('http://localhost:3333', {
-                path: '/roulette',
-                withCredentials: true
-            });
-            socketRef.current.on('connect', ()=>{
-                const currentTime = new Date().toLocaleTimeString();
-                console.log(`Connected to WebSocket at ${currentTime}`);
-            });
-            socketRef.current.on('disconnect', ()=>{
-                const currentTime = new Date().toLocaleTimeString();
-                console.log(`Disconnected at ${currentTime}`);
-            });
-            socketRef.current.on('initialState', (state)=>{
-                console.log('Received initial state:', state);
-                setTimer(state.countdown);
-                setSpinning(state.spinningInProgress);
-                setWheelPosition(state.wheelPosition);
-                if (state.spinningInProgress) {
-                    const remainingTime = Math.max(0, 6 - state.elapsedSpinTime);
-                    spinWheel(state.lastRoll, remainingTime);
-                }
-            });
-            socketRef.current.on('countdown', (remainingTime)=>{
-                const currentTime = new Date().toLocaleTimeString();
-                console.log(`New countdown started at ${currentTime}: ${remainingTime} seconds remaining`);
-                setIsTimerActive(true);
-                // Capture the start time (ms)
-                const startTime = Date.now();
-                // Calculate the end time based on the countdown
-                const endTime = startTime + remainingTime * 1000;
-                const updateCountdown = ()=>{
-                    const currentTime = Date.now();
-                    // Calculate the time left in seconds
-                    const timeLeft = Math.max(0, (endTime - currentTime) / 1000);
-                    // Ensure the timer is always a valid number and set it with two decimal places
-                    setTimer((prevTimer)=>{
-                        // Ensure it is a valid number and has two decimal places
-                        const validTimer = parseFloat(timeLeft.toFixed(2));
-                        // If it is not a valid number, set it to 0
-                        return isNaN(validTimer) ? 0 : validTimer;
-                    });
-                    if (timeLeft <= 0) {
-                        // Stop the countdown once it reaches 0
-                        clearInterval(interval);
-                    }
-                };
-                // Update the countdown every 10ms (for smooth decrement)
-                const interval = setInterval(updateCountdown, 10);
-            });
-            socketRef.current.on('rouletteRoll', ({ roll, remainingTime })=>{
-                spinWheel(roll, remainingTime);
-            });
-        }
-        return ()=>{
-            if (socketRef.current) {
-                socketRef.current.disconnect();
-                socketRef.current = null;
-            }
-        };
+        const socket = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"])('http://localhost:3333', {
+            path: '/roulette'
+        });
+        socket.on('connect', ()=>console.log('✅ Connected to WebSocket'));
+        socket.on('disconnect', ()=>console.log('❌ Disconnected'));
+        return ()=>socket.disconnect();
     }, []);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex flex-col items-center w-full mt-24 md:px-4",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "container flex justify-center max-w-screen-xl",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$public$292f$roulette$2f$components$2f$Roulette$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].rouletteWrapper,
-                children: [
-                    isTimerActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$public$292f$roulette$2f$components$2f$Roulette$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].timer,
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h6", {
-                                className: "text-white text-base uppercase",
-                                children: "Rolling In"
-                            }, void 0, false, {
-                                fileName: "[project]/app/(public)/roulette/components/Roulette.jsx",
-                                lineNumber: 153,
-                                columnNumber: 15
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                className: "text-white text-3xl font-bold",
-                                children: timer.toFixed(2)
-                            }, void 0, false, {
-                                fileName: "[project]/app/(public)/roulette/components/Roulette.jsx",
-                                lineNumber: 154,
-                                columnNumber: 15
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/(public)/roulette/components/Roulette.jsx",
-                        lineNumber: 152,
-                        columnNumber: 13
-                    }, this),
-                    !isTimerActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$public$292f$roulette$2f$components$2f$Roulette$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].selector
-                    }, void 0, false, {
-                        fileName: "[project]/app/(public)/roulette/components/Roulette.jsx",
-                        lineNumber: 157,
-                        columnNumber: 30
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `${__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$public$292f$roulette$2f$components$2f$Roulette$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].wheel} ${spinning ? __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$public$292f$roulette$2f$components$2f$Roulette$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].spinning : ''}`,
-                        style: {
-                            transform: `translate3d(-${wheelPosition}px, 0, 0)`,
-                            transitionDuration: `${spinDuration}s`
-                        },
-                        children: initWheel()
-                    }, void 0, false, {
-                        fileName: "[project]/app/(public)/roulette/components/Roulette.jsx",
-                        lineNumber: 158,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/(public)/roulette/components/Roulette.jsx",
-                lineNumber: 150,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
-            fileName: "[project]/app/(public)/roulette/components/Roulette.jsx",
-            lineNumber: 149,
-            columnNumber: 7
-        }, this)
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+        children: "WebSocket Test Page"
     }, void 0, false, {
         fileName: "[project]/app/(public)/roulette/components/Roulette.jsx",
-        lineNumber: 148,
-        columnNumber: 5
+        lineNumber: 14,
+        columnNumber: 10
     }, this);
-};
-const __TURBOPACK__default__export__ = Roulette;
+}
 }}),
 "[project]/app/(public)/roulette/components/BetAmount.jsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
@@ -1947,4 +1676,4 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 
 };
 
-//# sourceMappingURL=%5Broot%20of%20the%20server%5D__5ce596._.js.map
+//# sourceMappingURL=%5Broot%20of%20the%20server%5D__ad9105._.js.map

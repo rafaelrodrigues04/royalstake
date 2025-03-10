@@ -72,35 +72,77 @@ const Roulette = () => {
   };
 
   useEffect(() => {
-    socketRef.current = io('http://localhost:3333')
-
-    socketRef.current.on('initialState', (state) => {
-      console.log('Received initial state:', state)
-      setTimer(state.countdown)
-      setSpinning(state.spinningInProgress)
-      setWheelPosition(state.wheelPosition)
-
-      if (state.spinningInProgress) {
-        const remainingTime = Math.max(0, 6 - state.elapsedSpinTime)
-        spinWheel(state.lastRoll, remainingTime)
-      }
-    })
-
-    socketRef.current.on('countdown', (remainingTime) => {
-      console.log('Received countdown from server:', remainingTime)
-      setTimer(remainingTime)
-      setIsTimerActive(true)
-    });
-
-    socketRef.current.on('rouletteRoll', ({ roll, remainingTime }) => {
-      console.log('Received roll:', roll)
-      spinWheel(roll, remainingTime)
-    })
-
-    return () => {
-      socketRef.current.disconnect()
+    if (!socketRef.current) {
+      socketRef.current = io('http://localhost:3333', { path: '/roulette', withCredentials: true });
+  
+      socketRef.current.on('connect', () => {
+        const currentTime = new Date().toLocaleTimeString();
+        console.log(`Connected to WebSocket at ${currentTime}`);
+      });
+  
+      socketRef.current.on('disconnect', () => {
+        const currentTime = new Date().toLocaleTimeString();
+        console.log(`Disconnected at ${currentTime}`);
+      });
+  
+      socketRef.current.on('initialState', (state) => {
+        console.log('Received initial state:', state);
+        setTimer(state.countdown);
+        setSpinning(state.spinningInProgress);
+        setWheelPosition(state.wheelPosition);
+  
+        if (state.spinningInProgress) {
+          const remainingTime = Math.max(0, 6 - state.elapsedSpinTime);
+          spinWheel(state.lastRoll, remainingTime);
+        }
+      });
+  
+      socketRef.current.on('countdown', (remainingTime) => {
+        const currentTime = new Date().toLocaleTimeString();
+        console.log(`New countdown started at ${currentTime}: ${remainingTime} seconds remaining`);
+  
+        setIsTimerActive(true);
+        // Capture the start time (ms)
+        const startTime = Date.now();
+        // Calculate the end time based on the countdown
+        const endTime = startTime + remainingTime * 1000;
+  
+        const updateCountdown = () => {
+          const currentTime = Date.now();
+          // Calculate the time left in seconds
+          const timeLeft = Math.max(0, (endTime - currentTime) / 1000);
+  
+          // Ensure the timer is always a valid number and set it with two decimal places
+          setTimer((prevTimer) => {
+            // Ensure it is a valid number and has two decimal places
+            const validTimer = parseFloat(timeLeft.toFixed(2));
+            // If it is not a valid number, set it to 0
+            return isNaN(validTimer) ? 0 : validTimer; 
+          });
+  
+          if (timeLeft <= 0) {
+            // Stop the countdown once it reaches 0
+            clearInterval(interval);
+          }
+        };
+  
+        // Update the countdown every 10ms (for smooth decrement)
+        const interval = setInterval(updateCountdown, 10);
+      });
+  
+      socketRef.current.on('rouletteRoll', ({ roll, remainingTime }) => {
+        spinWheel(roll, remainingTime);
+      });
     }
-  }, [])
+  
+    return () => {
+      if (socketRef.current) {
+        socketRef.current.disconnect();
+        socketRef.current = null;
+      }
+    };
+  }, []);
+  
 
   return (
     <div className="flex flex-col items-center w-full mt-24 md:px-4">

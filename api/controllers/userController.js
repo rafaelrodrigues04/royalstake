@@ -215,7 +215,7 @@ exports.getUserData = async (req, res) => {
 
         // Return 200 HTTP Status and User Details
         res.status(200).json({
-            data: { userId: user.id, name: user.name, email: user.email },
+            data: { userId: user.id, name: user.name, email: user.email, balance: user.balance },
         });
     } catch (error) {
         console.error(error); // Log the full error for debugging
